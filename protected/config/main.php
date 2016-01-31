@@ -20,26 +20,24 @@ return array(
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		/*
+		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'test',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		*/
+		
 	),
 
 	// application components
 	'components'=>array(
-
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-
 		// uncomment the following to enable URLs in path-format
-		/*
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
@@ -48,16 +46,22 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		*/
-
-		// database settings are configured in database.php
-		'db'=>require(dirname(__FILE__).'/database.php'),
-
+		
+		
+		// uncomment the following to use a MySQL database
+		
+		'db'=>array(
+			'connectionString' => 'mysql:host=localhost;dbname=myproject',
+			'emulatePrepare' => true,
+			'username' => 'root',
+			'password' => 'aalbaal',
+			'charset' => 'utf8',
+		),
+		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
-			'errorAction'=>YII_DEBUG ? null : 'site/error',
+			'errorAction'=>'site/error',
 		),
-
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
@@ -73,7 +77,6 @@ return array(
 				*/
 			),
 		),
-
 	),
 
 	// application-level parameters that can be accessed
